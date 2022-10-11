@@ -1,0 +1,62 @@
+#include <stdio.h> 
+
+int main() 
+{ 
+    int a[10]; 
+    int i, n, key, index; 
+   
+    printf("Enter the number of elements in the array : "); 
+    scanf("%d",&n); 
+   
+    printf("Enter the elements of the array : "); 
+    for(i=0; i<n; i++) 
+        scanf("%d",&a[i]); 
+   
+    printf("Enter the element to be inserted : "); 
+    scanf("%d",&key); 
+   
+    printf("Enter the index at which the element is to be inserted : "); 
+    scanf("%d",&index); 
+   
+    for(i=n-1; i>=index; i--) 
+        a[i+1] = a[i]; 
+   
+    a[index] = key; 
+   
+    printf("The array after insertion is : "); 
+    for(i=0; i<=n; i++) 
+        printf("%d ",a[i]); 
+   
+    printf("\nEnter the element to be deleted : "); 
+    scanf("%d",&key); 
+   
+    for(i=0; i<n; i++) 
+    { 
+        if(a[i] == key) 
+        { 
+            for(; i<n; i++) 
+                a[i] = a[i+1]; 
+            break; 
+        } 
+    } 
+   
+    printf("The array after deletion is : "); 
+    for(i=0; i<n-1; i++) 
+        printf("%d ",a[i]); 
+   
+    printf("\nEnter the element to be searched : "); 
+    scanf("%d",&key); 
+   
+    for(i=0; i<n; i++) 
+    { 
+        if(a[i] == key) 
+        { 
+            printf("Element found at index %d",i); 
+            break; 
+        } 
+    } 
+   
+    return 0; 
+}
+Footer
+© 2022 GitHub, Inc.
